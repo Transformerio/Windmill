@@ -24,23 +24,23 @@ void gridMe(std::array<std::array<std::string, c_SIZE>, r_SIZE>a1,
 	std::array<std::array<std::string, c_SIZE>, r_SIZE>a2,
 	std::array<std::array<std::string, c_SIZE>, r_SIZE>a3,
 	std::array<std::array<std::string, c_SIZE>, r_SIZE>a4){
-		int grNum = (2*r_SIZE)+1;
-		int gcNum = (2*c_SIZE)+1;
-		std::array<std::array<std::string, c_SIZE*2>, r_SIZE*2>master;
-		for(int r = 0; r<r_SIZE;r++){
-			for(int c=0; c<c_SIZE;c++){
-				master[r][c] = a1[r][c];
-				master[r][c+c_SIZE] = a2[r][c];
-				master[r+r_SIZE][c] = a3[r][c];
-				master[r+r_SIZE][c+c_SIZE] = a4[r][c];
-			}
+	int grNum = (2*r_SIZE)+1;
+	int gcNum = (2*c_SIZE)+1;
+	std::array<std::array<std::string, c_SIZE*2>, r_SIZE*2>master;
+	for(int r = 0; r<r_SIZE;r++){
+		for(int c=0; c<c_SIZE;c++){
+			master[r][c] = a1[r][c];
+			master[r][c+c_SIZE] = a2[r][c];
+			master[r+r_SIZE][c] = a3[r][c];
+			master[r+r_SIZE][c+c_SIZE] = a4[r][c];
 		}
-		for(int r =0; r<r_SIZE*2;r++){
-			for(int c = 0; c<c_SIZE*2;c++){
-				std::cout<<master[r][c]<<" ";
-			}
-			std::cout<<std::endl;
+	}
+	for(int r =0; r<r_SIZE*2;r++){
+		for(int c = 0; c<c_SIZE*2;c++){
+			std::cout<<master[r][c]<<" ";
 		}
+		std::cout<<std::endl;
+	}
 }
 
 template<std::size_t r_SIZE, std::size_t c_SIZE>
